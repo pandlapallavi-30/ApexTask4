@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Project Implementation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <h2>My Projects</h2>
+      <ul>
+        <li><a href="#" onclick="showSection('portfolio')">Portfolio</a></li>
+        <li><a href="#" onclick="showSection('todo')">To-Do List</a></li>
+        <li><a href="#" onclick="showSection('products')">Products</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="active">
+    <h1>My Portfolio</h1>
+    <p>Welcome! This is my personal portfolio website.</p>
+
+    <h2>About</h2>
+    <p>I am a web developer skilled in HTML, CSS, and JavaScript.</p>
+
+    <h2>Projects</h2>
+    <ul>
+      <li>✔ To-Do List App</li>
+      <li>✔ Product Listing Page</li>
+      <li>✔ Portfolio Website</li>
+    </ul>
+
+    <h2>Contact</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- To-Do Section -->
+  <section id="todo">
+    <h1>To-Do List</h1>
+    <input type="text" id="taskInput" placeholder="Add new task">
+    <button onclick="addTask()">Add</button>
+    <ul id="taskList"></ul>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products">
+    <h1>Product Listing</h1>
+    <label>Filter by Category:
+      <select id="categoryFilter" onchange="filterProducts()">
+        <option value="all">All</option>
+        <option value="electronics">Electronics</option>
+        <option value="fashion">Fashion</option>
+      </select>
+    </label>
+
+    <label>Sort by:
+      <select id="sortOption" onchange="filterProducts()">
+        <option value="default">Default</option>
+        <option value="priceLow">Price: Low to High</option>
+        <option value="priceHigh">Price: High to Low</option>
+        <option value="rating">Rating</option>
+      </select>
+    </label>
+
+    <div id="productList" class="grid"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 My Projects</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
